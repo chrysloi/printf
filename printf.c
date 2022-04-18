@@ -30,13 +30,14 @@ int print(const char *format, va_list args) {
                     putchar(*s++);
                 }
                 break;
-	    }
+            }
             case '%':{
-		putchar('%');
-	        break;	
+                putchar('%');
+            break;	
             }
 
             state = 0;
+            }
         }
         
         format++;
