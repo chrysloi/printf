@@ -7,7 +7,7 @@
  * @param format 
  * @param args 
  */
-void print(const char *format, va_list args) {
+int print(const char *format, va_list args) {
     int state = 0;
 
     while (*format) {
@@ -47,7 +47,7 @@ void print(const char *format, va_list args) {
  * @param format 
  * @param ... 
  */
-void _printf(const char *format, ...) {
+int _printf(const char *format, ...) {
     va_list args;
     va_start(args, format);
 
