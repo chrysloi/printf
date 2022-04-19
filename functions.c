@@ -36,3 +36,8 @@ int print_string(va_list types, char buffer[], int flags, int width, int precisi
 int length = 0, i;
 char *str = va_arg(types, char*);
 
+UNUSED(buffer);
+UNUSED(flags);
+UNUSED(width);
+UNUSED(precision);
+UNUSED(size);
