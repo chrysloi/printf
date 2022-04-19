@@ -139,4 +139,12 @@ num = (unsigned long int)((-1) * n);
 is_negative = 1;
 }
 
+while (num > 0)
+{
+buffer[i--] = (num % 10) + '0';
+num /= 10;
+}
+
+i++;
+
 
