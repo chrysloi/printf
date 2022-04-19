@@ -167,4 +167,10 @@ unsigned int n, m, i, sum;
 unsigned int a[32];
 int count;
 
+UNUSED(buffer);
+UNUSED(flags);
+UNUSED(width);
+UNUSED(precision);
+UNUSED(size);
+
 
