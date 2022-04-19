@@ -25,15 +25,38 @@ int _printf(const char *format, ...)
         if (format[i != '%'])
         {
             buffer[buff_ind++] = format[i];
+            if (buff_ind == BUFF_SIZE)
+                print_buff(buffer, &buff_ind);
             printed_chars++;
+        }
+        else
+        {
+            print_buff(buffer, &buff_ind);
+            flags = get_flags(format,&i);
+            width = get_width(format, &i, args);
+            precision = get_precision(format, &i, args);
+            size = get_size(format, &i);
+            i++;
+            printed = handle_print(format, &i, args, buffer, 
+                                    flags, width, precision, size);
+            if (printed == -1)
+                return(-1);
+            printed_chars += printed;
         }
     }
 
-    print_buff(format, args);
+    print_buff(buffer, buff_ind);
 
     va_end(args);
+
+    return (printed_chars);
 }
 
+/**
+ * print_buffer - Prints the content that exists in the buffer
+ * @buffer: Array of chars
+ * @buff_ind: Index at which to add next char, represents the length
+ */
 void print_buff(char buffer[], int *buff_ind)
 {
     if (*buff_ind > 0)
