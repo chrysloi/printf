@@ -48,3 +48,10 @@ if (precision >= 6)
 str = "      ";
 }
 
+while (str[length] != '\0')
+length++;
+
+if (precision >= 0 && precision < length)
+length = precision;
+
+
