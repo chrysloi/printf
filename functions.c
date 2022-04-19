@@ -82,3 +82,15 @@ return (width);
 return (write(1, str, length));
 }
 
+/**
+ * print_percent - Prints a percent sign
+ * @types: List of arguments
+ * @buffer: Buffer array to handle print
+ * @flags: Calculates active flags
+ * @width: Width.
+ * @precision: Precision specifier
+ * @size: Size specifier
+ *
+ * Return: Number of chars printed
+ */
+
