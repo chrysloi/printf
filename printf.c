@@ -1,61 +1,42 @@
-#include <stdio.h>
-#include <stdarg.h>
+#include "main.h"
+
+void print_buff(char buffer[], int *buff_ind);
 
 /**
- * print - 
+ * _printf - Prints everything
  * 
- * @param format 
- * @param args 
+ * @format format
+ * Return: printed char.
  */
-int print(const char *format, va_list args) {
-    int state = 0;
-
-    while (*format) {
-        if (state == 0) {
-            if (*format == '%') {
-                state = 1;
-            } else {
-                putchar(*format);
-            }
-        } else if (state == 1) {
-            switch (*format)
-            {
-            case 'c':{
-                putchar(va_arg(args, int));
-                break;
-            }
-            case 's':{
-                const char *s = va_arg(args, const char *);
-                while (*s) {
-                    putchar(*s++);
-                }
-                break;
-            }
-            case '%':{
-                putchar('%');
-            break;	
-            }
-
-            state = 0;
-            }
-        }
-        
-        format++;
-    }
-    
-}
-
-/**
- * _printf - 
- * 
- * @param format 
- * @param ... 
- */
-int _printf(const char *format, ...) {
+int _printf(const char *format, ...)
+{
+    int i, printed = 0, printed_chars = 0;
+    int flags, width, precision, size, buff_ind = 0;
     va_list args;
+    char buffer[BUFF_SIZE];
+
+    if (format == NULL)
+        return(-1);
+
     va_start(args, format);
 
-    print(format, args);
+    for (i = 0; format && format[i] != '\0'; i++)
+    {
+        if (format[i != '%'])
+        {
+            buffer[buff_ind++] = format[i];
+            printed_chars++;
+        }
+    }
+
+    print_buff(format, args);
 
     va_end(args);
+}
+
+void print_buff(char buffer[], int *buff_ind)
+{
+    if (*buff_ind > 0)
+        write(1, &buffer[0], *buff_ind);
+        buff_ind = 0;
 }
