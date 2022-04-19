@@ -9,7 +9,7 @@
  *
  * Return: precision.
  */
-int get_precision(const char *format, int *i, va_list args)
+char *convert(unsigned long int num, int base, int lowercase)
 {
 	static char *rep;
 	static char buffer[50];
