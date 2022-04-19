@@ -150,4 +150,15 @@ i++;
 return (write_number(is_negative, i, buffer, flags, width, precision, size));
 }
 
+/**
+ * print_binary - Prints an unsigned number
+ * @types: List of arguments
+ * @buffer: Buffer array to handle print
+ * @flags: Calculates active flags
+ * @width: Width.
+ * @precision: Precision specifier
+ * @size: Size specifier
+ * Return: Numbers of char printed.
+ */
+
 
