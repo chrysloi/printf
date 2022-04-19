@@ -161,4 +161,10 @@ return (write_number(is_negative, i, buffer, flags, width, precision, size));
  * Return: Numbers of char printed.
  */
 
+int print_binary(va_list types, char buffer[], int flags, int width, int precision, int size)
+{
+unsigned int n, m, i, sum;
+unsigned int a[32];
+int count;
+
 
