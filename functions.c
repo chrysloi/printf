@@ -41,3 +41,10 @@ UNUSED(flags);
 UNUSED(width);
 UNUSED(precision);
 UNUSED(size);
+if (str == NULL)
+{
+str = "(null)";
+if (precision >= 6)
+str = "      ";
+}
+
