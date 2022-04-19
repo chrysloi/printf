@@ -30,3 +30,9 @@ return (handle_write_char(c, buffer, flags, width, precision, size));
  *
  * Return: Number of chars printed
  */
+
+int print_string(va_list types, char buffer[], int flags, int width, int precision, int size)
+{
+int length = 0, i;
+char *str = va_arg(types, char*);
+
