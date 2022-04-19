@@ -1,5 +1,14 @@
 #include "main.h"
 
+/**
+ * get_precision - calculate time to print
+ *
+ * @format: formatted string
+ * @i: List of arguments to be printed
+ * @args: list of arguments
+ *
+ * Return: precision.
+ */
 int get_precision(const char *format, int *i, va_list args)
 {
 	int curr_i = *i + 1;
