@@ -147,4 +147,7 @@ num /= 10;
 
 i++;
 
+return (write_number(is_negative, i, buffer, flags, width, precision, size));
+}
+
 
